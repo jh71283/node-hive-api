@@ -50,6 +50,11 @@
      * @param {String} password Your nest password.
      * @param {Function} done Callback to be called when login is complete.
      */
+     
+     /*
+     login:
+     curl --cookie-jar cookie.jar -X POST -H "Content-Type: application/json" -d '{"username":"<YOUR HIVE EMAIL>","password":"<YOUR HIVE PASSWORD>"}' https://www.hivehome.com/login
+     */
     var login = function (username, password, done) {
         nestPost({
           hostname: 'home.nest.com',
