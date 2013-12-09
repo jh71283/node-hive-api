@@ -5,11 +5,9 @@ var fs = require('fs');
 var request = require('request');
 var jar = request.jar();
 
-login();
 
+function login(username, password, callback) {
 
-function login(username, password) {
-    
     var login_data = '{"username": "' + username + '","password":"' + password + '"}';
 
     request({
@@ -27,14 +25,12 @@ function login(username, password) {
             },
             body: login_data
         }, function(error, response, body) {
-            console.log('error: ' + error);
-            console.log('response: ' + response);
-            console.log('body: ' + body);
-         
+            callback(response);
+
         });
 }
 
-function getTarget() {
+function getTarget(callback) {
     request({
             uri: "https://www.hivehome.com/myhive/heating/target",
             jar: jar,
@@ -47,9 +43,7 @@ function getTarget() {
                 'X-Requested-With': 'XmlHttpRequest'
             }
         }, function(error, response, body) {
-            console.log('error: ' + error);
-            console.log('response: ' + response);
-            console.log('body: ' + body);
+            callback(response);
         });
 
 }
