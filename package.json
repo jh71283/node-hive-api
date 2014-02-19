@@ -1,18 +1,18 @@
 {
-  "name": "unofficial-nest-api",
-  "description": "A simple API for accessing the very unofficial Nest thermostat APIs",
+  "name": "node-hive-api",
+  "description": "A simple API for accessing the very unofficial Hive thermostat APIs",
   "author": {
-    "name": "Aaron",
-    "email": "npm@wiredprairie.us",
-    "url": "http://www.wiredprairie.us"
+    "name": "jh71283",
+    "email": "john@greensky.co.uk",
+    "url": ""
   },
   "main": "lib/index.js",
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wiredprairie/unofficial_nodejs_nest.git"
+    "url": "https://github.com/jh71283/node-hive-api.git"
   },
-  "version": "0.1.4",
+  "version": "0.1.6",
   "private": false,
   "dependencies": {
     "request": "^2.34.0"
