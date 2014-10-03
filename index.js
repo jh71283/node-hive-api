@@ -4,6 +4,9 @@ var fs = require('fs');
 var request = require('request');
 var jar = request.jar();
 
+exports.login = login;
+exports.getTarget = getTarget;
+exports.setTarget = setTarget;
 
 function login(username, password, callback) {
 
