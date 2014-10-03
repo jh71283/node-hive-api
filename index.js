@@ -8,7 +8,7 @@ exports.login = login;
 exports.getTarget = getTarget;
 exports.setTarget = setTarget;
 
-function login(username, password, callback) {
+var login = function (username, password, callback) {
 
     var login_data = '{"username": "' + username + '","password":"' + password + '"}';
 
@@ -35,7 +35,7 @@ function login(username, password, callback) {
         });
 }
 
-function getTarget(callback) {
+var getTarget = function (callback) {
     request({
             uri: "https://www.hivehome.com/myhive/heating/target",
             jar: jar,
@@ -55,7 +55,7 @@ function getTarget(callback) {
         });
 
 }
-function setTarget(target,callback) {
+var setTarget = function(target,callback) {
       var target_data = '{"id":1, "target": ' + target + '}';
 
     request({
