@@ -47,6 +47,45 @@ exports.getTarget = function(callback) {
         }
     });
 };
+
+exports.getCurrentInside = function(callback) {
+    request({
+        uri: "https://www.hivehome.com/myhive/weather",
+        jar: jar,
+        cookie: jar,
+        method: "GET",
+        timeout: 10000,
+        followRedirect: true,
+        maxRedirects: 10,
+        headers: {
+            'X-Requested-With': 'XmlHttpRequest'
+        }
+    }, function(error, response, body) {
+        if (error == null) {
+            callback(JSON.parse(body).inside);
+        }
+    });
+};
+
+exports.getCurrentOutside = function(callback) {
+    request({
+        uri: "https://www.hivehome.com/myhive/weather",
+        jar: jar,
+        cookie: jar,
+        method: "GET",
+        timeout: 10000,
+        followRedirect: true,
+        maxRedirects: 10,
+        headers: {
+            'X-Requested-With': 'XmlHttpRequest'
+        }
+    }, function(error, response, body) {
+        if (error == null) {
+            callback(JSON.parse(body).outside);
+        }
+    });
+};
+
 exports.setTarget = function(target, callback) {
     var target_data = '{"id":1, "target": ' + target + '}';
 
